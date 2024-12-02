@@ -36,10 +36,18 @@ int main() {
     // printf("Enter the values of the array (%d x %d) :\n", N, M);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            printf("Enter value of array[%d][%d] : ", i, j);
-            scanf("%d", &array[i][j]);
+            int val;
+              do {
+                printf("Enter value for array[%d][%d] : ", i, j);
+                scanf("%d", &val);
+                  if (val < 0 || val > 255) {
+                    printf("Value must be between 0 and 255. Please enter the value again.\n");
+                }
+            } while (val < 0 || val > 255); 
+            array[i][j] = val;
         }
     }
+
     printf("----------------------------\n");
     // คำนวณ brightness
     double brightness = cal_brightness(N, M, array);
