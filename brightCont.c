@@ -1,7 +1,9 @@
+//นายภวัต พลับศิริ 116510400645-7 SEC 2
+
 #include <stdio.h>
 #include <math.h>
 
-//fn คำนวณ brightness
+//fn brightness
 double cal_brightness(int N, int M, int array[N][M]) {
     double sumB = 0;
     for (int i = 0; i < N; i++) {
@@ -12,7 +14,7 @@ double cal_brightness(int N, int M, int array[N][M]) {
     return sumB / (N * M);
 }
 
-//fn คำนวณ contrast
+//fn contrast
 double cal_contrast(int N, int M, int array[N][M], double brightness) {
     double sumC = 0;
     for (int i = 0; i < N; i++) {
@@ -33,7 +35,6 @@ int main() {
     printf("----------------------------\n");
 
     int array[N][M];
-    // printf("Enter the values of the array (%d x %d) :\n", N, M);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             int val;
@@ -49,11 +50,11 @@ int main() {
     }
 
     printf("----------------------------\n");
-    // คำนวณ brightness
+    //brightness
     double brightness = cal_brightness(N, M, array);
     printf("Brightness : %.2f\n", brightness);
 
-    // คำนวณ contrast
+    //contrast
     double contrast = cal_contrast(N, M, array, brightness);
     printf("Contrast : %.2f\n", contrast);
 
